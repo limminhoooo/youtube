@@ -6,16 +6,16 @@ import VideoSearch from "../components/video/VideoSearch";
 import {fetchFromAPI} from "../utils/api";
 
 const Search = () => {
-    const {searchID} = useParams();
+    const {searchId} = useParams();
     const [videos, setVideos] = useState([]);
     const [nextPageToken, setNextPageToken] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setVideos([]);
-        fetchVideos(searchID);
+        fetchVideos(searchId);
         setLoading(true);
-    }, [searchID]);
+    }, [searchId]);
 
     const fetchVideos = (query, pageToken = "") => {
         fetchFromAPI(`search?part=snippet&q=${query}&pageToken=${pageToken}`)
@@ -32,7 +32,7 @@ const Search = () => {
 
     const handleLoadMore = () => {
         if (nextPageToken) {
-            fetchVideos(searchID, nextPageToken);
+            fetchVideos(searchId, nextPageToken);
         }
     };
 
@@ -41,7 +41,7 @@ const Search = () => {
     return (
         <Main title="유투브 검색" description="유튜브 검색 결과 페이지입니다.">
             <section id="searchPage" className={searchPage}>
-                <h2><em>{searchID}</em> 검색 결과입니다.</h2>
+                <h2><em>{searchId}</em> 검색 결과입니다.</h2>
                 <div className="video__inner search">
                     <VideoSearch videos={videos} />
                 </div>

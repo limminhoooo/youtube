@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react"
-import Main from "../components/section/Main"
+import React, {useEffect, useState} from "react";
+import Main from "../components/section/Main";
 
-import {developerText} from "../data/developer"
-import {Link} from "react-router-dom"
+import {developerText} from "../data/developer";
+import {Link} from "react-router-dom";
 
 const Developer = () => {
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setTimeout(() => {
-            setLoading(false)
-        }, 500)
-    }, [])
+            setLoading(false);
+        }, 500);
+    }, []);
 
-    const developerPageClass = loading ? 'isLoading' : 'isLoaded';
+    const developerPageClass = loading ? "isLoading" : "isLoaded";
 
     return (
         <Main
@@ -26,7 +26,7 @@ const Developer = () => {
                     {developerText.map((developer, key) => (
                         <div className="developer" key={key}>
                             <div className="developer__img play__icon">
-                                <Link to={`chnnel/${developer.channelId}`}>
+                                <Link to={`/channel/${developer.channelId}`}>
                                     <img
                                         src={developer.img}
                                         alt={developer.name}
@@ -34,7 +34,7 @@ const Developer = () => {
                                 </Link>
                             </div>
                             <div className="developer__info">
-                                <Link to={`chnnel/${developer.channelId}`}>
+                                <Link to={`/channel/${developer.channelId}`}>
                                     {developer.name}
                                 </Link>
                             </div>
@@ -43,7 +43,7 @@ const Developer = () => {
                 </div>
             </section>
         </Main>
-    )
-}
+    );
+};
 
-export default Developer
+export default Developer;

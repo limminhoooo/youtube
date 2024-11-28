@@ -49,10 +49,6 @@ const Home = () => {
                 title="😱 지금 이 코딩을 영상으로"
                 id="youtube"
             />
-            {/* <VideoSlider title="" id="website" />
-            <VideoSlider title="" id="gsap" />
-            <VideoSlider title="" id="portfolio" />
-            <VideoSlider title="" id="youtube" /> */}
         </Main>
     )
 }
