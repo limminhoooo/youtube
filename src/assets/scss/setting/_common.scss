@@ -7,13 +7,28 @@ body {
 section {
     padding: 40px;
 
-    @media (max-width: 800px){
+    @media (max-width: 800px) {
         padding: 20px;
     }
 
     h2 {
         font-size: 1.25rem;
         margin-bottom: 1rem;
+        em {
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 50%;
+                background-color: var(--red100);
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                z-index: -1;
+                border-radius: 30px;
+            }
+        }
     }
 }
 
@@ -24,7 +39,7 @@ section {
 }
 .isLoaded {
     opacity: 1;
-    transition: opacity 0.5s; 
+    transition: opacity 0.5s;
 }
 
 // 마우스 오버 아이콘
@@ -34,9 +49,9 @@ section {
         display: block;
         cursor: pointer;
         width: 100%;
-        
+
         &::before {
-            content: '';
+            content: "";
             width: 100%;
             height: 100%;
             background-color: var(--blackAlpha200);
@@ -54,7 +69,8 @@ section {
             content: "";
             width: 80px;
             height: 80px;
-            background: var(--blackAlpha400) url(../../img/icon/play.svg) no-repeat center;
+            background: var(--blackAlpha400) url(../../img/icon/play.svg)
+                no-repeat center;
             position: absolute;
             left: 50%;
             top: 50%;
